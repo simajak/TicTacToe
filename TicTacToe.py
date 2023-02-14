@@ -78,7 +78,7 @@ def check_diagonal(board):
         return True
 
 # Výhra
-def check_if_win():
+def check_if_win(board):
     if check_diagonal(board) or check_vertical(board) or check_horizont(board):
         print_board(board)
         print(f" Congratulations, the player {winner} WON!")
@@ -97,4 +97,5 @@ def check_if_tie(board):
 while game_running:
     print_board(board)
     player_input(board)
-    check_if_tie()
+    check_if_win(board)
+    check_if_tie(board)
